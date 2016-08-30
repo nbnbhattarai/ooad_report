@@ -1,0 +1,12 @@
+*~
+*.pdf
+*.log
+*.toc
+*.log
+*.aux
+auto*
+*.bbl
+*.blg
+*.lof
+*.lot
+*.out

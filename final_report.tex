@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt,onepage]{article}
+% \usepackage[left=35mm, right=20mm, top=35mm, bottom=20mm, includefoot]{geometry}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{final_report}
+\usepackage{float}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[R]{\thepage\ \hspace{1pt} }
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\AtBeginDocument{\renewcommand\contentsname{Table of Contents}}
+
+\begin{document}
+
+% Title Page start
+\pagenumbering{roman}
+\addcontentsline{toc}{section}{Title Page}
+\begin{titlepage}
+  \centering
+  \includegraphics[width=0.2\textwidth]{tu_logo.png}\par% \vspace{1cm}
+  {\textsc\LARGE TRIBHUVAN UNIVERSITY \par}
+  {\textsc\LARGE IOE, CENTRAL CAMPUS PULCHOWK \par}
+  {\textsc\LARGE LALITPUR \par}
+  \vspace{1cm}
+	{\LARGE\textsc Automatic Speech Recognition System\par}
+	\vspace{3cm}
+        {
+          {\Large Bikash Gupta (070/BCT/512)}\\
+          \vspace{0.1cm}
+          {\Large Kshitiz Shrestha (070/BCT/518)}\\
+          \vspace{0.1cm}
+          {\Large Miran Ghimire (070/BCT/521)}\\
+          \vspace{0.1cm}
+          {\Large Nabin Bhattarai (070/BCT/522)}\\
+          \vspace{0.1cm}
+          {\Large Pabin Raj Luitel (070/BCT/523)}\\
+          \vspace{0.1cm}
+          {\Large Sabin Silwal (070/BCT/532)}\\
+          \vspace{0.1cm}
+        }
+	\vspace{1cm}
+
+	\vfill
+
+        % Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+% Title Page End
+\setcounter{page}{2}
+\section*{Acknowlegment}
+\addcontentsline{toc}{section}{Acknowledgement}
+
+\cleardoublepage
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+\cleardoublepage
+
+{
+  \setlength{\parskip}{0em}
+  \renewcommand\contentsname{Table of Contents} % This will change heading text
+  \tableofcontents \addcontentsline{toc}{section}{Table of Contents}
+}
+
+\cleardoublepage
+\setlength{\parskip}{0em}
+\addcontentsline{toc}{section}{List Of Figures}
+\listoffigures
+
+\newpage
+
+\section*{LIST OF ABBREVIATIONS}
+
+\begin{tabular}{l l}
+  ASR & Automatic Speech Recognition \\
+  AI & Artificial Intelligence \\
+\end{tabular}
+
+\cleardoublepage
+\pagenumbering{arabic}
+\section{Introduction}
+
+\subsection{Background}
+
+\newpage
+\subsection{Significance}
+
+\subsection{Overview}
+
+\newpage
+\section{Problem Statement}
+
+\newpage
+\section{Objective}
+
+\newpage
+\section{System Design}
+\subsection{Need for Design}
+
+\newpage
+\subsection{UML Diagram}
+The UML diagram of the system is as follows.
+
+\newpage
+\subsection{Dataflow Diagram}
+The Dataflow diagram of the system is as follows.
+
+\newpage
+\subsection{Class Diagram}\par
+The Class diagram of the system is as follows.
+
+\newpage
+\section{Literature Review} 
+
+\newpage
+\section{Methodology}
+
+\newpage
+\section{Output}
+
+\section{Discussion}
+
+\newpage
+\section{Further Improvement}
+
+\newpage
+\section{Conclusion}
+
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{final_report}
+\nocite{*}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "final_report"
+%%% End:
