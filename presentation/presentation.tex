@@ -1,7 +1,9 @@
-\documentclass{beamer}
+\documentclass[11pt]{beamer}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usetikzlibrary{shapes, arrows}
 \usetheme{metropolis}
+\usepackage{graphicx}
 
 % define block styles
 \tikzstyle{rounded} = [rectangle, draw, text centered, rounded corners]
@@ -88,33 +90,97 @@
   \centering
   \begin{tikzpicture}[align=center, node distance=1.5cm]
     \node [rounded] (start) {start};
-    \node [parallo, right of=start, below of=start] (record_audio) {Record Audio};
-    \node [parallo, left of=start, below of=start] (audio_data) {Audio Data};
+    \node [parallo, below right=1cm and 1.5cm of start] (record_audio)  [ below right=1cm and 1.5cm of start] {Record Audio};
+    \node [parallo] (audio_data)  [below left=1cm and 1.5cm of start] {Audio Data};
     \node [box, below of=start, node distance=2.5cm, align=center] (data_ext) {data extraction};
-    \node [box, below of=data_ext] (feature_ext) {Feature extraction};
-    \node [box, below of=feature_ext] (acoustic_model) {Acoustic Model};
-    \node [rounded, below of=acoustic_model] (end) {end};
+    \node [box, below of=data_ext, node distance=1cm, align=center] (framming) {Framming};
+    \node [box, below of=framming, node distance=1cm] (feature_ext) {Feature extraction (MFCC)};
+    \node [box, below of=feature_ext, node distance=1cm] (acoustic_model) {Acoustic Model};
+    \node [parallo] (speech_recognizer) [below=0.5cm of acoustic_model] {Speech Recognizer};
+    \node [rounded] (end) [below=0.5cm of speech_recognizer] {end};
 
     \path [line] (start) -| (record_audio);
     \path [line] (start) -| (audio_data);
     \path [line] (record_audio) -| (data_ext);
     \path [line] (audio_data) -| (data_ext);
-    \path [line] (data_ext) -- (feature_ext);
+    \path [line] (data_ext) -- (framming);
+    \path [line] (framming) -- (feature_ext);
     \path [line] (feature_ext) -- (acoustic_model);
-    \path [line] (acoustic_model) -- (end);
+    \path [line] (acoustic_model) -- (speech_recognizer);
+    \path [line] (speech_recognizer) -- (end);
   
   \end{tikzpicture}
-  \pause
-  \cleardoublepage
-  \textbf{haha}
 \end{frame}
 
 \begin{frame}
-  
+  \frametitle{Recorder}
+  \begin{itemize}
+  \item Record audio signal from user and store it in a Audio Object.
+  \item We are using python's pyaudio library to record audio signal.
+  \item Specifications of Recording
+    \begin{itemize}
+    \item{Samplerate} : 16000$H_z$
+    \item{Channels} : 1 (mono)
+    \item{Samplewidth} : 2 Bytes
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
-\end{document}
+% \begin{frame}
+%   \frametitle{Audio Object}
+%   \begin{itemize}
+%   \item It stores audio signal in convenient way for processing.
+%   \item Remove Noise from Audio signal.
+%   \item Framing the sample data.
+%   \item Provides functionalities such as playing audio, information about audio signal
+%   \end{itemize}
+% \end{frame}
 
+\begin{frame}
+  \frametitle{Framing}
+  \begin{itemize}
+  \item Framing is the process of separating sample data to a series of vector with those sample value
+  \item Specifications of frame
+    \begin{itemize}
+    \item{Frame Duration:}25ms
+    \item{Frame Step:}10ms
+    \end{itemize}
+  \item In our case
+    \begin{itemize}
+    \item{Frame Size:}400 samples
+    \item{Frame Step:}160 samples
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Feature Extraction}
+\begin{itemize}
+\item Feature extraction is the process of getting data from audio that play main role in speech recognition process.
+\item For every frame of sample data, the features are extracted.
+\item MFCC Feature extraction
+\end{itemize}
+  \centering
+  \begin{figure}[C]
+    \centering
+    \includegraphics[width=1\textwidth]{../MFCC_Flowchart.png}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \frametitle{Feed Forward Neural Network}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Language Model}
+  \subtitle{NGram Language Model}
+  \begin{itemize}
+  \item Used to predict the next word, given previous words.
+  \item It gives the probability of next word.
+  \item Trained with English books for the model of English language.
+  \item Helps to find the spoken words.
+  \end{itemize}
+\end{frame}
+\end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
