@@ -111,13 +111,42 @@ speaker recognition, voice controlled system etc.
 
 \newpage
 \subsection{Objectives}
-
+The primary objective of the project was to develop and implement a fully functional ASR system using the concept of OOAD.The whole process of creating the system was achieved through a series of minor procedures which can be furthur subdivided into two major stages. The first involved the problem study,solution propostion, designing and development of system. The second phase included actual operation, solution of obsolescence problems and progress towards the new standards all of which are enlisted below:
+\\
+\begin{enumerate}
+	\item \textbf{Stage 1}
+	\begin{itemize}
+	\item To design and develop the system according to the concept of OOAD.
+	\item To implement a system once it was developed and put into the service.
+	\end{itemize}
+\item \textbf{Stage 2}
+	\begin{itemize}
+	\item Consolidating the system by removing the trivial features and small as well as big bugs.
+	\item Removing the obsolescence problems.
+	\item To revise the sytem according to need and change of standard in use.
+	\end{itemize}
+\end{enumerate}
 \newpage
 \section{Literature Review} 
 	\subsection{Proposed System}
+	The system would be able to replace the conventional method of interacting with the computerized system. The proposed system basically has the following the features.\\
+	\begin{itemize}
+	\item Recording of speech.
+	\item Conversion of speech to text.
+	\end{itemize}
 	\newpage
 	
 	\subsection{Project Description}
+	\emph{'Automatic Speech Recognition System'} is a prototype developed with the aim of making the interaction with the computerized system as natural as possible by giving the voice commands. However the system developed only comprises of converting a speech to text which is a very first step toward the goal. Currently our system is capable of converting the speech into the text.\\
+Our system comprises of the two yet interdependent subsystems.
+\begin{itemize}
+\item \textbf{Front End} 
+\par
+It is the visible part of the system. The user will interact with this part of the system. It offers the system interface and consist of the request to give a speech.
+\item \textbf{Back End}
+\par
+This is the part of the system where every processing work is done. This is the part where we train the neural network for recoginizing the words.This unit is handled by the developer who is responsible for the addition, modification and updating the training content of the neural network. Currently forwords which are unable to process by our neural network, google API has beenused for maintaining the system accuracy.
+\end{itemize}
 	\newpage
 \section{Methodology}
 The prototype was developed using language python.
