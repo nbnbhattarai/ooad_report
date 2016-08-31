@@ -53,13 +53,22 @@
 \end{titlepage}
 % Title Page End
 \setcounter{page}{2}
-\section*{Acknowlegment}
+
+\section*{Acknowledgement}
+	We would like to express our sincere gratitude Department of Electronics and Computer Engineering of I.O.E, Pulchowk Campus for providing us opportunity to implement the knowledge of Object Oriented And Design(OOAD) on the project.
+	\\
+	\\
+	Besides we are highly indebted to our teacher Dr. Arun Timalsina for his guidance on subject of OOAD and motivating us on project. Furthumore we would like to acknowledge the crucial role of our teacher Arun Verma whose contribution in stimulating suggestions and encouragement helped us to coordinate our project.
+	\\
+	\\
+	Finally we would like to appreciate the guidance of our friends and all those people who helped us directly or indirectly to complete our project.
 \addcontentsline{toc}{section}{Acknowledgement}
 
 \cleardoublepage
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
-
+	With the aim of overcoming the traditional way of interacting with the computerized system or devices 'Automatic Speech Recognition System' has been introduced. It is a software that which feature the more convinent and more natural way to interact with the computer system via the voice.
+Using this software, one can get his speech recognized easily. Thus 'Automatic Speech Recognition Sytem' is a software that automatically recognizes the voice of the user and convert it into a text. Besides this application, can have a wide range of application like voice recognition, voice controlled system etc.
 \cleardoublepage
 
 {
@@ -84,26 +93,127 @@
 
 \cleardoublepage
 \pagenumbering{arabic}
-\section{Introduction}
+\section{OverView}
 
-\subsection{Background}
+\subsection{Introduction}
+ With the pace of the technological developement, people these days expect to do every of their computer work in a more simpler, convinent and natural way. By realizing the need of the general people we have created a prototype 
+'Automatic Speech Recognition System', that can convert a speech of the user into the corresponding text.
+\\
+\\
+'Automatic Speech Recognition System' is prototype that one can use to convert his/her speech into a corresponding text. Initially a voice of user is recorded or user are asked to say something. Voice is recorded with the sampling rate of 16000Hz for certain timeperiod. Thus obtained record 
+usually comes with the noises, therefore it has to be filtered. Filter is done by the software itself. After wards
+\\
+\\
+Thus the prototype developed basically converts the user-speech into a text. However it can be equally be suitable in other voiced system such as 
+speaker recognition, voice controlled system etc.
+\newpage
+\subsection{Statement of the problem}
 
 \newpage
-\subsection{Significance}
+\subsection{Objectives}
+The primary objective of the project was to develop and implement a fully functional ASR system using the concept of OOAD.The whole process of creating the system was achieved through a series of minor procedures which can be furthur subdivided into two major stages. The first involved the problem study,solution propostion, designing and development of system. The second phase included actual operation, solution of obsolescence problems and progress towards the new standards all of which are enlisted below:
+\\
+\begin{enumerate}
+	\item \textbf{Stage 1}
+	\begin{itemize}
+	\item To design and develop the system according to the concept of OOAD.
+	\item To implement a system once it was developed and put into the service.
+	\end{itemize}
+\item \textbf{Stage 2}
+	\begin{itemize}
+	\item Consolidating the system by removing the trivial features and small as well as big bugs.
+	\item Removing the obsolescence problems.
+	\item To revise the sytem according to need and change of standard in use.
+	\end{itemize}
+\end{enumerate}
+\newpage
+\section{Literature Review} 
+	\subsection{Proposed System}
+	The system would be able to replace the conventional method of interacting with the computerized system. The proposed system basically has the following the features.\\
+	\begin{itemize}
+	\item Recording of speech.
+	\item Conversion of speech to text.
+	\end{itemize}
+	\newpage
+	
+	\subsection{Project Description}
+	\emph{'Automatic Speech Recognition System'} is a prototype developed with the aim of making the interaction with the computerized system as natural as possible by giving the voice commands. However the system developed only comprises of converting a speech to text which is a very first step toward the goal. Currently our system is capable of converting the speech into the text.\\
+Our system comprises of the two yet interdependent subsystems.
+\begin{itemize}
+\item \textbf{Front End} 
+\par
+It is the visible part of the system. The user will interact with this part of the system. It offers the system interface and consist of the request to give a speech.
+\item \textbf{Back End}
+\par
+This is the part of the system where every processing work is done. This is the part where we train the neural network for recoginizing the words.This unit is handled by the developer who is responsible for the addition, modification and updating the training content of the neural network. Currently forwords which are unable to process by our neural network, google API has beenused for maintaining the system accuracy.
+\end{itemize}
+	\newpage
+\section{Methodology}
+The prototype was developed using language python.
+\subsection{Design Approach}
+As software developement lifecycle of our system is linear and sequential along with the 6 member involved in project 'Rapid Application Developemnt(RAD)' was the model followed for a software development along with the concept of OOAD.\\
+The development process in OOAD can be divided into two parts which are described below along the how the project was developed in each of developement process phases.
+\subsubsection{Developement Process: Macro level}
+\begin{enumerate}
+\item Conceptualization
+\par
+In this step the core requirement of the software was established.Idea for the development of the system was formed and establishment of the vision of the idea and it's validation was carried out.
+\par
+The primary product from this process was the prototype of the system that was going to be developed.
 
-\subsection{Overview}
 
 \newpage
-\section{Problem Statement}
+\item Analysis
+\par
+In this step model of the system desired behavior was developed. Here the explicit criteria were established for the completion of the prototype.
 
 \newpage
-\section{Objective}
-
+\item Design
+\par
+In this step architecture for the implementation was created.
 \newpage
-\section{System Design}
-\subsection{Need for Design}
-
+\item Evolution
+\par
+In this step, the system was made to evolve with the implementation through
+the sucessive refinement.
 \newpage
+\item Maintainance
+In this step, the system was 
+\newpage
+\end{enumerate}
+\subsubsection{Developement Process: Micro level}
+\begin{enumerate}
+\item Identification of Class and Object
+\par
+It is the first step in o-o style decomposition. In this developement process the boundary of the problem were established and discovery of the abstraction, vocabulary and contraints of problem domain was done.
+\par
+The major product from this step were the generation of candidate class and object and entity grouping.
+\par 
+The major problem in this phase was the rapid change because of the constatnshift of focus and architecture of the product.
+\newpage
+\item Identification of semantics of Class and Object
+\par
+In this step, establishment of behavior and attributes of each abstraction already identifed was done. Besides the refinement of the candidate abstraction was also carried out throught an intelligent and measurable distribution of responsibilities.
+\par
+The major product from this step were the refinement and establishement of bbehavior and attributes of abstraction and development of use case diagram of the system as seen in 
+\par
+During the walkthrough in this step, arhitectural vision was lively debated and complete set of operation for each abstraction was done.
+\newpage
+\item Identification of realationship of Class and Object
+\par
+This step helped to formalizes the conceptual as well as physical separations of concerns among the abstraction and specify the associations among the calss and objects.Here identification and refinement of association and collaborations was done.Within a identification of association, navigation of sematic direct depenedency between two classes were established and incase of the indirect dependency, new abstraction was introduced and specialization,generalization or aggregation in reation was determined. In case of indenfication of collaboration, clustering of classes into the categories and the organization of modules into subsystem was carried out.
+
+\par
+The major product from this step was the class diagram that could depict the association among the abstraction and detail.
+\newpage
+\item Implementing Classes and Objects
+\par
+In this step executable code to transform the logical to physical binding were written. Here selection of structures and algorithms that provide the semantics of the abstraction were determined and implemented.
+
+\par 
+The major product from this step were the activity diagram, sequence diagram along the with executable code and the end of the this develpement process.
+\newpage
+\end{enumerate}
 \subsection{UML Diagram}
 The UML diagram of the system is as follows.
 
@@ -116,14 +226,13 @@ The Dataflow diagram of the system is as follows.
 The Class diagram of the system is as follows.
 
 \newpage
-\section{Literature Review} 
-
+\subsection{Activity Diagram}
 \newpage
-\section{Methodology}
-
+\subsection{Sequence Diagram}
 \newpage
-\section{Output}
 
+\section{Result}
+\newpage
 \section{Discussion}
 
 \newpage
@@ -131,7 +240,7 @@ The Class diagram of the system is as follows.
 
 \newpage
 \section{Conclusion}
-
+Hence after the completion of the project, we were able to gain the knowledge and understanding of developing the fully functional system with OOAD approach. Most of our objectives were met even, however the prototype developed is not fully accurate sometimes because of the background noise, result might not be accurate and sometimes because of lack incorporation of full domainknowledge, result may not be accurate. However the system is pretty much accurate for the noise less background with the domain integrated within the prototype.Besides with the completion of project we were also able to gain theinvaluable knowledge on team work and system development.
 \newpage
 \bibliographystyle{ieeetr}
 \bibliography{final_report}
